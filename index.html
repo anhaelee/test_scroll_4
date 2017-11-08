@@ -1,0 +1,528 @@
+<idoctype html>
+<head>
+	<meta charset = "utf-8">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	</head>
+<body id="myBody" >
+
+<div class="logo">
+<img src="./img/logo1.png" ></div>
+
+<header id="topblock">
+<div id="menu1"></div>
+</header>
+
+
+<div id="sideblock"></div>
+
+<div id="bottomblock"></div>
+
+
+
+<div class="load" >
+	<div id="loadtv"></div>
+	<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/>
+</svg>
+</div>	
+
+
+<article>
+
+<div class="tv" id="tv"> 
+	<img id="myButton" src="./img/button.png">
+	<ul>
+			<li id="menuA"></li>
+			<li id="menuB"></li>
+			<li id="menuC"></li>
+			<li id="menuD"></li>
+	
+		</ul>
+	</div>
+
+
+<div class="section" id="sectionA">
+	<video  id="video1"  ><source src="./img/video.mp4" type="video/mp4">
+	</video>
+</div>
+
+<div class="section" id="sectionB">
+	<video  id="video2" ><source src="./img/video2.mp4" type="video/mp4">
+	</video>
+</div>
+
+<div class="section" id="sectionE">
+<video loop id="video5" ><source src="./img/nosignal.mp4" type="video/mp4">
+	</video>
+</div>	
+
+<div class="section" id="sectionC">
+	<video  id="video3" ><source src="./img/video3.mp4" type="video/mp4">
+</div>
+
+<div class="section" id="sectionD">
+	<video  id="video4" ><source src="./img/video4.mp4" type="video/mp4">
+</div>
+
+
+
+
+
+
+
+
+
+</article>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+
+
+
+
+
+//Flower animation
+
+		setInterval(attachflower,1000);
+	function attachflower(){
+		var t = document.createElement("div");
+		t.setAttribute("id","flower"); 
+		t.style.position = "fixed"; 
+		t.style.top = randomBH(0,window.innerHeight) + "px";
+		t.style.left = randomBH(0,window.innerWidth) + "px";
+		//풍선을 지워주는 함수
+		t.addEventListener("animationend",remove);
+		//애니메이션이 끝나면 remove	
+		document.body.appendChild(t);	
+	}
+	
+	// 지워주는 함수	
+	function remove(){
+		var t = event.target; //이벤트의 타겟을 t로 지정하고.
+		t.parentNode.removeChild(t); //그 엄마를 찾아서 자식중에 t를 지워라. 
+	}
+	//최소값과 최대값 사이의 임의의 숫자를 리턴하는 함수
+	function randomBH(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+
+
+
+
+
+
+
+
+//Scroll animation
+
+
+	window.onscroll = function(){
+		console.log(document.body.scrollTop);
+		var myScroll = document.body.scrollTop;
+		//스크롤 위치 값
+
+
+		if( myScroll<201){
+			video1.play();
+			menuA.style.background = "black";
+			myButton.style.transform = "rotate(0deg)";
+			menuA.style.border = "1px solid black";
+
+			myBody.style.background = "#f1eee5";
+			topblock.style.background = "f1eee5";
+			sideblock.style.background = "#f1eee5";
+			bottomblock.style.background = "#f1eee5";
+
+
+
+		} else {video1.pause();
+			menuA.style.background = "#f1eee5";
+			menuA.style.border = "0px";
+
+			myBody.style.background = "#f1eee5";
+			topblock.style.background = "#f1eee5";
+			sideblock.style.background = "#f1eee5";
+			bottomblock.style.background = "#f1eee5";
+
+	}			
+		
+
+		if( 800>myScroll&&myScroll > 600  ){
+			video2.play();
+			menuB.style.background = "black";
+			myButton.style.transform = "rotate(90deg)";
+			menuB.style.border = "1px solid black";
+
+		} else {video2.pause();
+			menuB.style.background = "#f1eee5";
+			menuB.style.border = "0px"
+	
+	}			
+		
+
+
+		if( 1600>myScroll&&myScroll > 1400 ){
+			video5.play();
+			myButton.style.transform = "rotate(180deg)";
+			myBody.style.background = "black";
+			topblock.style.background = "black";
+			sideblock.style.background = "black";
+			bottomblock.style.background = "black";
+
+
+		} else {video5.pause();
+		
+				
+
+	}
+
+	if( 2400>myScroll&&myScroll > 2000){
+			video3.play();
+			menuC.style.background = "black";
+			myButton.style.transform = "rotate(270deg)";
+			menuC.style.border = "1px solid black";
+
+
+		} else {video3.pause();
+			menuC.style.background = "#f1eee5";
+			menuC.style.border = "0px"
+
+	}		
+
+
+	if( 3100>myScroll&&myScroll > 2600){
+			video4.play();
+			menuD.style.background = "black";
+			myButton.style.transform = "rotate(360deg)";
+			menuD.style.border = "1px solid black";
+
+		} else {video4.pause();
+			menuD.style.background = "#f1eee5";
+			menuD.style.border = "0px"
+
+	}						
+		
+}
+
+
+
+//Scroll Bootstrap
+
+
+	var scrolling = false;
+	var currentPos = 0;
+
+    function scrollUp(){
+        if(!scrolling && currentPos > 0 ){
+            scrolling=true;
+            currentPos --;
+            var scrollToElement = $('.section')[currentPos];
+
+            $('html, body').animate({
+                scrollTop: $(scrollToElement).offset().top
+            }, 1, function(){
+                scrolling = false;
+            });      
+        }
+    }   
+
+    function scrollDown(){   
+        if(!scrolling && currentPos < $('.section').length-1  ){
+            scrolling=true;
+            currentPos ++;
+            var scrollToElement = $('.section')[currentPos];
+
+            $('html, body').animate({
+                scrollTop: $(scrollToElement).offset().top
+            }, 1,function(){
+                scrolling = false;
+            }); 
+        }
+    }    
+
+    $(document).ready(function() {
+
+    // 현재 위치 로드
+
+        for( var i = 0; i < $('.section').length; i++){
+            var elm = $('.section')[i];
+
+            if( $(document).scrollTop() >= $(elm).offset().top ){
+                currentPos = i;
+            }
+        }
+
+        $(document).bind('DOMMouseScroll', function(e){
+            if(e.originalEvent.detail > 0) {
+                scrollDown();
+            }else {
+                scrollUp();   
+            }
+            return false;
+        })
+
+        $(document).bind('mousewheel', function(e){
+            if(e.originalEvent.wheelDelta < 0) {
+                scrollDown();
+            }else {
+                scrollUp();     
+            }
+            return false;
+        })
+    })
+
+
+
+
+
+
+
+//Button
+
+$("#menuA").click(function(){
+	var position = $("#sectionA").offset();                            
+		$("body").stop().animate({scrollTop:position.top},1);
+});
+$("#menuB").click(function(){
+	var position = $("#sectionB").offset();                            
+		$('body').stop().animate({scrollTop:position.top},1);
+});
+$("#menuC").click(function(){
+	var position = $("#sectionC").offset();                            
+		$("body").stop().animate({scrollTop:position.top},1);
+});
+$("#menuD").click(function(){
+	var position = $("#sectionD").offset();                            
+		$("body").stop().animate({scrollTop:position.top},1);
+});
+
+
+
+$(document).ready(function(){
+    $("svg").click(function(){
+        $(".load").animate({top: '-100%'});
+    });
+});
+
+
+$(function() {
+    var video = $('#video1')[0];
+    $('svg').click(function() {
+        if( video.paused ) {
+            video.play();
+        }
+
+    });
+});
+</script>
+
+
+
+
+
+
+
+<style>
+		html { font-family: 'Spoqa Han Sans'; font-weight: 200;}
+		.tv{width:904px; 
+			height: 1000px;
+			position: fixed; 
+			left: calc(50% - 473px); 
+			top: 149px;
+			background-repeat: no-repeat;}
+
+		#tv{background: url('./img/tv5.png'); 
+			background-size: 100%;  z-index: 888;
+			 }	
+
+		.tv img{position: absolute;
+				top: 255px;
+				left: 784px;}	
+
+		.section{height:750px;
+				width:800px; 
+				position: relative; 
+				margin:0 auto;
+				margin-left: calc(50% - 470px);
+				z-index:777;
+			}
+
+		.logo {position: fixed; 
+			   top: 113px;
+			   left:calc(50% - 630px); 
+			   z-index: 555;
+			   width: 250px; 
+			   height: 400px;}
+
+		div.logo img{size: 10%; position: relative; }	   
+
+		body{background: #f1eee5; }	  
+
+
+
+		#flower{width:30px; height:30px; 
+			background: url('./img/flower1.png');
+			background-size:80% auto;
+			background-repeat:no-repeat;
+			animation: bMove 8s linear;
+			position: fixed;
+			z-index:666;
+		}
+
+
+		@keyframes bMove{
+			0%{ transform: rotateZ(0deg);  opacity:0;}
+			20%{opacity:1;}
+			80%{ opacity:1; }
+			100%{ background-position:0 0;
+				opacity:0; 
+				transform: rotateZ(360deg);}
+		
+		}
+
+
+		header{height:150px; 
+			width:1000px; 
+			transition: all 0s; 
+			z-index: 888; 
+			padding: 0;
+			position:fixed; 
+			top: 0; 
+			left: calc(50% - 500px);
+			background-color:#f1eee5;}
+
+
+
+		#sideblock{height:100%; 
+			width:110px; 
+			transition: all 0s; 
+			z-index: 888; 
+			padding: 0;
+			position:fixed; 
+			top: 0; 
+			left: calc(50% - 500px);
+			background-color:#f1eee5;}
+
+
+		#bottomblock{height:700px; 
+			width:1000px; 
+			transition: all 0s; 
+			z-index: 888; 
+			padding: 0;
+			position:fixed; 
+			top: 650px; 
+			left: calc(50% - 500px);
+			background-color:#f1eee5;}
+
+
+
+
+		.tv ul   {width:14px;
+					 height:148px; 
+					 z-index: 999; 
+					 padding-left: 0;
+					 position: absolute;
+					 top: 260px;  
+					 right: 135px;
+					 display: block;}
+
+		.tv  li{width:12.5px;
+				  height:12.5px;
+				  color:black;
+				  background: white;
+				  float:left;
+				  border-radius: 50px;
+				  text-align: left;
+				  line-height: 110px;
+				  color:black;
+				  margin-bottom: 23px;
+				  font-size: 3em;
+				  list-style: none; 
+				  cursor: pointer;
+				   display: block;
+				   }
+
+			
+
+
+		article{margin-bottom: 0px; margin-top: 0px; }
+		#video1{width:800px; 
+				height: 450px; 
+				margin-top:  160px;}
+
+		#video2{width:800px; 
+				height: 450px; 
+				margin-top:  160px;}
+
+		#video3{width:800px; 
+				height: 450px; 
+				margin-top:   160px;}
+
+		#video4{width:800px; 
+				height: 450px; 
+				margin-top: 160px; 
+				margin-bottom: 200px;}
+		#video5{width:800px; 
+				height: 450px; 
+				margin-top: 160px;}
+
+		
+		#sectionA{ background: black;transition: all 1s; }
+		#sectionB{ background: black; transition: all 1s; }
+		#sectionC{ background: black; transition: all 1s;}
+		#sectionD{ background: black; transition: all 1s; }
+		#sectionE{ background: url(./img/nosignal.jpg); transition: all 1s; }
+
+
+
+		.load{ width: 100%;
+		height:100%;
+		z-index: 9999;
+		position: fixed;
+		top: 0; left: 0;
+		background: #e26223;
+		opacity: ; }
+
+
+
+		svg { background:none;
+  				 text-align: center;
+  				 width: 50px;
+  				 height: 50px;
+  				 transition: all 0.5s;
+  				 cursor: pointer;
+  				 margin: 0 auto;
+  				 position:absolute;
+  				 top: calc( 70% - 90px);
+  				 left: calc( 50% - 25px);}
+
+		
+
+		svg:hover  {
+ 		 color: white;
+ 		 background:#e2550e;
+ 		 border-radius: 50px;
+ 		 width:50px;
+ 		 height:50px;
+
+		}
+
+
+
+  		#loadtv { width: 300px;
+  				 height: 200px;
+  				 background: url('./img/loadtv2.png');
+  				 background-size: 40%;
+  				 background-repeat: no-repeat; 
+  				 left: calc(50% - 60px);
+  				 top: calc(50% - 100px);
+  				 position: relative;}	
+
+</style>
+
