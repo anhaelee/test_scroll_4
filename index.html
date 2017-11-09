@@ -5,8 +5,8 @@
 	</head>
 <body id="myBody" >
 
-<div class="logo">
-<img src="./img/logo1.png" ></div>
+<div class="logo" id="myLogo">
+</div>
 
 <header id="topblock">
 <div id="menu1"></div>
@@ -174,9 +174,10 @@
 			topblock.style.background = "black";
 			sideblock.style.background = "black";
 			bottomblock.style.background = "black";
-
+			myLogo.style.background = "none";
 
 		} else {video5.pause();
+			myLogo.style.background = "url(./img/logo1.png)";
 		
 				
 
@@ -358,9 +359,11 @@ $(function() {
 			   left:calc(50% - 630px); 
 			   z-index: 555;
 			   width: 250px; 
-			   height: 400px;}
+			   height: 400px;
+			   background: url('./img/logo1.png');
+			   background-size: 80%;}
 
-		div.logo img{size: 10%; position: relative; }	   
+			   
 
 		body{background: #f1eee5; }	  
 
@@ -459,10 +462,6 @@ $(function() {
 		#video2{width:800px; 
 				height: 450px; 
 				margin-top:  160px;}
-	
-		#video5{width:800px; 
-				height: 450px; 
-				margin-top: 160px;}
 
 		#video3{width:800px; 
 				height: 450px; 
@@ -471,15 +470,17 @@ $(function() {
 		#video4{width:800px; 
 				height: 450px; 
 				margin-top: 160px; 
-				margin-bottom: 800px;}
-		
+				margin-bottom: 200px;}
+		#video5{width:800px; 
+				height: 450px; 
+				margin-top: 160px;}
 
 		
 		#sectionA{ background: black;transition: all 1s; }
 		#sectionB{ background: black; transition: all 1s; }
 		#sectionC{ background: black; transition: all 1s;}
 		#sectionD{ background: black; transition: all 1s; }
-		#sectionE{ background: url(./img/nosignal.jpg); transition: all 1s; }
+		#sectionE{ background: black; transition: all 1s; }
 
 
 
